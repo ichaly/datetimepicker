@@ -48,12 +48,16 @@ dependencies {
 
   Date Picker
   ```java
-  DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(new OnDateSetListener() {...}, year, month, day);
+  DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(
+      new OnDateSetListener() {...}, year, month, day
+  );
   ```
 
   Time Picker
   ```java
-  TimePickerDialog timePickerDialog = TimePickerDialog.newInstance(new TimePickerDialog.OnTimeSetListener() {...}, hourOfDay, minute, is24HourMode);
+  TimePickerDialog timePickerDialog = TimePickerDialog.newInstance(
+      new TimePickerDialog.OnTimeSetListener() {...}, hourOfDay, minute, is24HourMode
+  );
   ```
   For more info look at the source code of the provided sample [here][4]
 
@@ -64,7 +68,10 @@ dependencies {
 3. **Set Min/Max Date**
 
   ```java
-  datePickerDialog.setDateConstaints(new SimpleMonthAdapter.CalendarDay(2015, 4, 17), new SimpleMonthAdapter.CalendarDay(2015, 4, 20));
+  datePickerDialog.setDateConstaints(
+      new SimpleMonthAdapter.CalendarDay(2015, 4, 17),
+      new SimpleMonthAdapter.CalendarDay(2015, 4, 20)
+  );
   ```
 4. **Set Highlight**
 
