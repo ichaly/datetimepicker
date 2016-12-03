@@ -26,7 +26,7 @@ Or browse the [source code of the sample application][3] for a complete example 
 
 ## Including in your project
 
-Last version is 0.0.5
+Last version is 0.0.7
 
 Just add the following in your build.gradle
 
@@ -38,7 +38,7 @@ repositories{
 }
 
 dependencies {
-    compile 'com.github.lachlanm:datetimepicker:0.0.5'
+    compile 'com.github.ichaly:datetimepicker:0.0.7'
 }
 ```
 
@@ -65,6 +65,11 @@ dependencies {
   ```java
   datePickerDialog.setDateConstaints(new SimpleMonthAdapter.CalendarDay(2015, 4, 17), new SimpleMonthAdapter.CalendarDay(2015, 4, 20));
   ```
+4. **Set Highlight**
+    ```java
+    Date[] dates = new Date[]{};
+    datePickerDialog.setDateHighlight(dates);
+    ```
 
 ## Acknowledgements
 
