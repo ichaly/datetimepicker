@@ -116,7 +116,10 @@ public class SimpleMonthPagerAdapter extends PagerAdapter implements SimpleMonth
         drawingParams.put(SimpleMonthView.VIEW_PARAMS_MAX_DATE_MONTH, maxDate.month);
         drawingParams.put(SimpleMonthView.VIEW_PARAMS_MAX_DATE_YEAR, maxDate.year);
 
+        monthView.setHighlightDates(mParams.highlightDates);
+
         monthView.setMonthParams(drawingParams);
+
         monthView.invalidate();
     }
 

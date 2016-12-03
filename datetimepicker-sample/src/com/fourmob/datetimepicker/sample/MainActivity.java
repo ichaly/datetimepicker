@@ -47,7 +47,11 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
 
                     datePickerDialog.setDateConstraints(new CalendarDay(minDate), new CalendarDay(maxDate));
                 }
-
+                if(getSetting(R.id.checkBoxUseHighlight)){
+                    Calendar c=Calendar.getInstance();
+                    c.add(Calendar.DAY_OF_YEAR,-1);
+                    datePickerDialog.setDateHighlight(c.getTime());
+                }
                 datePickerDialog.setCloseOnSingleTapDay(getSetting(R.id.checkBoxCloseOnSingleTapDay));
                 datePickerDialog.show(getSupportFragmentManager(), DATEPICKER_TAG);
             }

@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import com.fourmob.datetimepicker.R;
 import com.fourmob.datetimepicker.Utils;
 
+import java.util.Date;
+
 public class DayPickerView extends FrameLayout implements SimpleMonthPagerAdapter.MonthPagerListener {
 
     private ViewPager mViewPager;
@@ -151,11 +153,20 @@ public class DayPickerView extends FrameLayout implements SimpleMonthPagerAdapte
         @NonNull
         public final CalendarDay maxDate;
 
-        public DayPickerParams(@NonNull CalendarDay minDate, @NonNull CalendarDay maxDate, @NonNull CalendarDay selectedDate, int firstDayOfWeek) {
+        public Date[] highlightDates;
+
+        public DayPickerParams(
+            @NonNull CalendarDay minDate,
+            @NonNull CalendarDay maxDate,
+            @NonNull CalendarDay selectedDate,
+            int firstDayOfWeek,
+            Date... dates
+        ) {
             this.selectedDate = selectedDate;
             this.firstDayOfWeek = firstDayOfWeek;
             this.minDate = minDate;
             this.maxDate = maxDate;
+            this.highlightDates = dates;
         }
     }
 }

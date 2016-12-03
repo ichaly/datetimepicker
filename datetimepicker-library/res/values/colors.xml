@@ -7,6 +7,7 @@
     <color name="done_text_color_disabled">#ffcccccc</color>
     <color name="date_picker_text_normal">#000000</color>
     <color name="date_picker_text_selected">#ffffff</color>
+    <color name="date_picker_highlight">#88FE475D</color>
     <color name="picker_background">#ffffff</color>
 
     <color name="ampm_text_color_normal">#000000</color>

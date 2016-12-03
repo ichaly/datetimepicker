@@ -25,6 +25,7 @@ import com.nineoldandroids.animation.ObjectAnimator;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class DatePickerDialog extends DialogFragment implements View.OnClickListener, YearPickerView.YearPickerListener, DayPickerView.DayPickerListener {
@@ -51,7 +52,7 @@ public class DatePickerDialog extends DialogFragment implements View.OnClickList
     public static final String KEY_LIST_POSITION = "list_position";
     public static final String KEY_LIST_POSITION_OFFSET = "list_position_offset";
 
-    private static SimpleDateFormat DAY_MONTH_FORMAT = new SimpleDateFormat("EEE, dd MMM", Locale.getDefault());
+    private static SimpleDateFormat DAY_MONTH_FORMAT = new SimpleDateFormat("EEE, MMM dd日", Locale.getDefault());
     private static SimpleDateFormat YEAR_FORMAT = new SimpleDateFormat("yyyy", Locale.getDefault());
 
     private final Calendar mCalendar = Calendar.getInstance();
@@ -378,6 +379,12 @@ public class DatePickerDialog extends DialogFragment implements View.OnClickList
         updateDayPickerParams();
     }
 
+    private Date [] highlightDates;
+    public void setDateHighlight(Date ... dates) {
+        highlightDates = dates;
+        updateDayPickerParams();
+    }
+
     public void setCloseOnSingleTapDay(boolean closeOnSingleTapDay) {
         mCloseOnSingleTapDay = closeOnSingleTapDay;
     }
@@ -478,7 +485,7 @@ public class DatePickerDialog extends DialogFragment implements View.OnClickList
 
     private DayPickerView.DayPickerParams createDayPickerParams() {
         return new DayPickerView.DayPickerParams(
-                mMinDate, mMaxDate, new CalendarDay(mCalendar), mWeekStart
+                mMinDate, mMaxDate, new CalendarDay(mCalendar), mWeekStart,highlightDates
         );
     }
 

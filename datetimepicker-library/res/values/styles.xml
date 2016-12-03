@@ -39,4 +39,5 @@
         <item name="android:paddingRight">8dip</item>
         <item name="android:textStyle">bold</item>
     </style>
+
 </resources>
